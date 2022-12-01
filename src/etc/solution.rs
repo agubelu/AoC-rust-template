@@ -24,3 +24,51 @@ impl Display for Solution {
         }
     }
 }
+
+impl From<i32> for Solution {
+    fn from(sol: i32) -> Self {
+        Self::I32(sol)
+    }
+}
+
+impl From<i64> for Solution {
+    fn from(sol: i64) -> Self {
+        Self::I64(sol)
+    }
+}
+
+impl From<i128> for Solution {
+    fn from(sol: i128) -> Self {
+        Self::I128(sol)
+    }
+}
+
+impl From<u32> for Solution {
+    fn from(sol: u32) -> Self {
+        Self::U32(sol)
+    }
+}
+
+impl From<u64> for Solution {
+    fn from(sol: u64) -> Self {
+        Self::U64(sol)
+    }
+}
+
+impl From<u128> for Solution {
+    fn from(sol: u128) -> Self {
+        Self::U128(sol)
+    }
+}
+
+impl From<String> for Solution {
+    fn from(sol: String) -> Self {
+        Self::Str(sol)
+    }
+}
+
+impl From<&str> for Solution {
+    fn from(sol: &str) -> Self {
+        Self::Str(sol.to_owned())
+    }
+}
