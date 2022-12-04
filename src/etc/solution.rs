@@ -5,9 +5,11 @@ pub enum Solution {
     I32(i32),
     I64(i64),
     I128(i128),
+    Isize(isize),
     U32(u32),
     U64(u64),
     U128(u128),
+    Usize(usize),
     Str(String),
 }
 
@@ -17,9 +19,11 @@ impl Display for Solution {
             I32(x) => x.fmt(f),
             I64(x) => x.fmt(f),
             I128(x) => x.fmt(f),
+            Isize(x) => x.fmt(f),
             U32(x) => x.fmt(f),
             U64(x) => x.fmt(f),
             U128(x) => x.fmt(f),
+            Usize(x) => x.fmt(f),
             Str(x) => x.fmt(f),
         }
     }
@@ -43,6 +47,12 @@ impl From<i128> for Solution {
     }
 }
 
+impl From<isize> for Solution {
+    fn from(sol: isize) -> Self {
+        Self::Isize(sol)
+    }
+}
+
 impl From<u32> for Solution {
     fn from(sol: u32) -> Self {
         Self::U32(sol)
@@ -58,6 +68,12 @@ impl From<u64> for Solution {
 impl From<u128> for Solution {
     fn from(sol: u128) -> Self {
         Self::U128(sol)
+    }
+}
+
+impl From<usize> for Solution {
+    fn from(sol: usize) -> Self {
+        Self::Usize(sol)
     }
 }
 
